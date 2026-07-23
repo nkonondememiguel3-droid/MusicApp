@@ -1,0 +1,28 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="musicApp.App"
+             xmlns:local="using:musicApp"
+             xmlns:viewModels="clr-namespace:musicApp.ViewModels"
+             xmlns:views="clr-namespace:musicApp.Views"
+             RequestedThemeVariant="Dark">
+    <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
+
+    <Application.DataTemplates>
+        <local:ViewLocator />
+        <!-- <DataTemplate DataType="viewModels:AlbumViewModel"> -->
+        <!--     <views:AlbumView/>  -->
+        <!-- </DataTemplate> -->
+    </Application.DataTemplates>
+
+    <Application.Styles>
+        <FluentTheme />
+    </Application.Styles>
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceInclude Source="avares://musicApp/Icons.axaml"></ResourceInclude>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
