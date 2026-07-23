@@ -35,7 +35,7 @@
             <Button
                 HorizontalAlignment="Right"
                 VerticalAlignment="Top"
-                Command="{ Binding AddAlbumCommand } ">
+                Command="{Binding AddAlbumCommand}">
                 <PathIcon Data="{ StaticResource store_microsoft_regular }"></PathIcon>
             </Button>
             
