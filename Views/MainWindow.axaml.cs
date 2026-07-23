@@ -25,6 +25,6 @@ public partial class MainWindow : ReactiveWindow<MainViewModel>
     {
         var dialog = new MusicStoreWindow() { DataContext = new MusicStoreViewModel() };
         AlbumViewModel? result = await dialog.ShowDialog<AlbumViewModel?>(this);
-        context.SetOutput(result);
+        context.SetOutput(result); // send the result(AlbumViewModel) to the MainViewModel
     }
 }

@@ -8,7 +8,7 @@ using ReactiveUI;
 
 namespace musicApp.ViewModels;
 
-public class AlbumViewModel : ViewModelBase
+public class AlbumViewModel : ViewModelBase, IEquatable<AlbumViewModel>
 {
     private readonly Album _album;
 
@@ -38,5 +38,25 @@ public class AlbumViewModel : ViewModelBase
                 return null;
             }
         });
+    }
+
+    public bool Equals(AlbumViewModel? other)
+    {
+        if (other is null) return false;
+        if (ReferenceEquals(this, other)) return true;
+        return _album.Equals(other._album);
+    }
+
+    public override bool Equals(object? obj)
+    {
+        if (obj is null) return false;
+        if (ReferenceEquals(this, obj)) return true;
+        if (obj.GetType() != GetType()) return false;
+        return Equals((AlbumViewModel)obj);
+    }
+
+    public override int GetHashCode()
+    {
+        return _album.GetHashCode();
     }
 }
